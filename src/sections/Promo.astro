@@ -1,0 +1,87 @@
+---
+
+---
+
+<section class="top-2 flex flex-col gap-x-2 gap-y-2 space-y-0 font-medium text-primary">
+	<div class="m-2 grid justify-items-center text-lg font-medium uppercase lg:text-2xl">
+		<span>Merch y Tattoo</span>
+	</div>
+	<div
+		class="grid gap-x-10 text-center uppercase [grid-template-columns:1fr] md:grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] lg:[grid-template-columns:1fr_1.5fr_1fr]"
+	>
+		<article
+			class="order-2 flex items-center justify-center border-y-2 border-primary px-10 py-10 text-center text-xl md:order-none md:flex-grow md:px-0 md:py-12 lg:py-20"
+		>
+			<h3 class="list-none text-balance md:max-w-[200px]">
+				<li>bulde boleta</li>
+				<li>roder ink studio</li>
+			</h3>
+		</article>
+
+		<article
+			class="order-1 flex items-center justify-center border-t-2 border-primary px-10 py-10 text-3xl md:order-none md:flex-1 md:border-y-2 md:px-0 md:py-12 lg:px-0 lg:py-20 lg:text-4xl"
+		>
+			<h3 class="md:max-w-[250px]">
+				<a
+					class="inline-block transition-transform hover:scale-110 hover:text-zinc-300"
+					href="https://www.instagram.com/dannniggaz/?hl=es"
+					target="_blank"
+					rel="nofollow noopener"
+				>
+					desde lo Más norte del sur
+
+					<span class="twitch-link detect-in-viewport">south rules</span>
+				</a>
+			</h3>
+		</article>
+
+		<article
+			class="order-3 flex items-center justify-center border-b-2 border-primary px-10 py-10 text-xl sm:py-12 md:order-none md:border-y-2 md:px-0 md:py-12 lg:py-20"
+		>
+			<h3 class="list-none text-balance md:max-w-[250px]">
+				<li>divarte</li>
+			</h3>
+		</article>
+	</div>
+</section>
+
+<style>
+	.twitch-link,
+	svg {
+		@apply text-twitch;
+	}
+
+	@supports (animation-timeline: view()) {
+		svg {
+			animation-timeline: view();
+			animation-name: show;
+			animation-timing-function: ease-in;
+		}
+
+		:not(a:hover) > .twitch-link {
+			animation-timeline: view(block);
+			animation-name: show;
+			animation-timing-function: ease-in;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		svg {
+			animation-name: none;
+		}
+	}
+
+	@keyframes show {
+		from {
+			@apply text-primary;
+		}
+
+		50% {
+			@apply text-twitch;
+		}
+
+		100% {
+			@apply text-twitch;
+		}
+	}
+</style>

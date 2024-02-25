@@ -1,0 +1,111 @@
+---
+import { Image } from "astro:assets"
+import localBirdImage from "../../public/gegga.png"
+---
+
+<section class="my-32 flex flex-col gap-y-10 font-medium text-primary">
+	<div class="m-2 grid justify-items-center text-lg font-medium uppercase lg:text-2xl">
+		<span>Presentación de Video</span>
+		<span>GEGGA</span>
+	</div>
+
+	<a
+		href="https://www.instagram.com/geggabanda/?hl=es"
+		target="_blank"
+		rel="nofollow noopener"
+		class="mx-auto transition hover:scale-125 hover:opacity-70"
+		aria-label="Síguelo en directo twitch.tv/ibai"
+	>
+		<Image
+			class="rounded-md"
+			src={localBirdImage}
+			alt="Un pájaro sentado sobre un nido de huevos."
+		/>
+	</a>
+
+	<div
+		class="grid gap-x-10 text-center uppercase [grid-template-columns:1fr] md:grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] lg:[grid-template-columns:1fr_1.5fr_1fr]"
+	>
+		<article
+			class="order-2 flex items-center justify-center border-y-2 border-primary px-10 py-10 text-center text-xl md:order-none md:flex-grow md:px-0 md:py-12 lg:py-20"
+		>
+			<h3 class="list-none text-balance md:max-w-[200px]">
+				<li>Dj Set Radio Macoña</li>
+				<li>Hosy Vivix</li>
+			</h3>
+		</article>
+
+		<article
+			class="order-1 flex items-center justify-center border-t-2 border-primary px-10 py-10 text-3xl md:order-none md:flex-1 md:border-y-2 md:px-0 md:py-12 lg:px-0 lg:py-20 lg:text-4xl"
+		>
+			<h3 class="md:max-w-[250px]">
+				<a
+					class="inline-block transition-transform hover:scale-110 hover:text-zinc-300"
+					href="https://www.instagram.com/dannniggaz/?hl=es"
+					target="_blank"
+					rel="nofollow noopener"
+				>
+					Invitados Sorpresa
+					<br />
+					<span aria-hidden="true" class="mx-1 hidden md:inline">+</span>
+					<br />
+
+					<span class="twitch-link detect-in-viewport">Dann Niggaz</span>
+				</a>
+			</h3>
+		</article>
+
+		<article
+			class="order-3 flex items-center justify-center border-b-2 border-primary px-10 py-10 text-xl sm:py-12 md:order-none md:border-y-2 md:px-0 md:py-12 lg:py-20"
+		>
+			<h3 class="list-none text-balance md:max-w-[250px]">
+				<li>CASTE TN</li>
+				<li>Street High</li>
+				<li>SianQ98</li>
+				<li>Street High</li>
+				<li>G-Town</li>
+			</h3>
+		</article>
+	</div>
+</section>
+
+<style>
+	.twitch-link,
+	svg {
+		@apply text-twitch;
+	}
+
+	@supports (animation-timeline: view()) {
+		svg {
+			animation-timeline: view();
+			animation-name: show;
+			animation-timing-function: ease-in;
+		}
+
+		:not(a:hover) > .twitch-link {
+			animation-timeline: view(block);
+			animation-name: show;
+			animation-timing-function: ease-in;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		svg {
+			animation-name: none;
+		}
+	}
+
+	@keyframes show {
+		from {
+			@apply text-primary;
+		}
+
+		50% {
+			@apply text-twitch;
+		}
+
+		100% {
+			@apply text-twitch;
+		}
+	}
+</style>
